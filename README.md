@@ -17,3 +17,5 @@ var address = "TMSv56vAtZgFRjPAWQvPSEu2eEoviKALH3" //转账地址
 var trxPrivateKey = "fed5b06fafe7ae951928ca5e5a7e8fbbacfe4eff334e687452e997106a3a46c7"; //私钥
 /*配置区域 */
 ```
+- 配置上方参数
+- 在文件夹根目录下的终端输入命令 `node app` 启动项目
