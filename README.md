@@ -22,5 +22,5 @@ var mode = "main"//网络选择 main:主网 nile:nile网
 - 配置上方参数
 - 在文件夹根目录下的终端输入命令 `node app` 启动项目
 ## 私人定制
-Telegram：[byprogram](https://t.me/byprogram)<br>
+Telegram：[@byprogram](https://t.me/byprogram)<br>
 主页：[点击查看](https://www.byprogram.xyz/)
