@@ -15,9 +15,5 @@ var pool = mysql.createPool({
 var token = "5904481333:AAFYFJovtPYrMpuqLo2VzPk-mAvRWuD03mc" //机器人token
 var address = "TMSv56vAtZgFRjPAWQvPSEu2eEoviKALH3" //转账地址
 var trxPrivateKey = "fed5b06fafe7ae951928ca5e5a7e8fbbacfe4eff334e687452e997106a3a46c7"; //私钥
-var rate_TRX = 0.12; //trx兑换比例 1个trx可兑换0.2个usdt
-var sxf_TRX = 0.05; //兑换手续费
-
-var rate_USDT = 18; 
 /*配置区域 */
 ```
