@@ -163,7 +163,7 @@ function main(msg) {
     .then((body)=>{
         tornPayList = JSON.parse(body).data;
         for (let a = 0; a < tornPayList.length; a++) {
-            if (tornPayList[a].raw_data.contract[0].parameter.value.amount/1000000>minCount_TRX) {
+            if (tornPayList[a].raw_data.contract[0].parameter.value.amount/1000000>minCount_TRX && tornPayList[a].raw_data.timestamp+600000>Math.round(new Date())) {
                 query(`SELECT * FROM exchange where from_transaction_id = "${tornPayList[a].txID}";`).then(result=>{
                     if (!result[0] && tornPayList[a].raw_data.contract[0].parameter.value.amount && tronWeb.address.fromHex(tornPayList[a].raw_data.contract[0].parameter.value.owner_address)!=address) {
                         query(`INSERT INTO exchange (from_amount,from_coin,from_transaction_id,from_address,to_coin,to_address,timestamp,time) VALUES ("${tornPayList[a].raw_data.contract[0].parameter.value.amount/1000000}","TRX","${tornPayList[a].txID}","${tronWeb.address.fromHex(tornPayList[a].raw_data.contract[0].parameter.value.owner_address)}","USDT","${address}",unix_timestamp(),now() );`)
@@ -190,7 +190,7 @@ function listenUSDT(usdturl) {
     .then((body)=>{
         tornPayList = JSON.parse(body).data;
         for (let a = 0; a < tornPayList.length; a++) {
-            if (tornPayList[a].value/1000000>minCount_USDT) {
+            if (tornPayList[a].value/1000000>minCount_USDT && tornPayList[a].block_timestamp+600000>Math.round(new Date())) {
                 query(`SELECT * FROM exchange where from_transaction_id = "${tornPayList[a].transaction_id}";`).then(result=>{
                     if (!result[0] && tornPayList[a].value && tornPayList[a].to==address && tornPayList[a].to!=tornPayList[a].from) {
                         query(`INSERT INTO exchange (from_amount,from_coin,from_transaction_id,from_address,to_coin,to_address,timestamp,time) VALUES ("${tornPayList[a].value/1000000}","USDT","${tornPayList[a].transaction_id}","${tornPayList[a].from}","TRX","${address}",unix_timestamp(),now() );`)
