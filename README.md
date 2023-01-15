@@ -1,6 +1,6 @@
 # telegrambot-usdttrx-exchange
 自动兑换trx-usdt的电报机器人
-## 预览
+## 实时预览
 机器人：[@exchange321_bot](https://t.me/exchange321_bot)
 ## 使用方法
 - 安装node.js和mysql
